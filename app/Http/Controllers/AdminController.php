@@ -15,9 +15,9 @@ class AdminController extends Controller
     
     public function postAddCategory(Request $request){
         $category = new Category();
-        $category = $request->category;
+        $category->category = $request->category;
         $category->save();
-        return redirect()->back()->with('caetegory_message', 'Category added successfully');
+        return redirect()->back()->with('category_message', 'Category added successfully');
     }
     
     public function viewCategory(){
