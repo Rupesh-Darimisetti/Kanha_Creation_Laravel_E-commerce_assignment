@@ -30,7 +30,7 @@
             {{-- <td style='padding:12px'><a href="{{ route('admin.editcategory', $category->id) }}" class='btn btn-primary'>Edit</a></td> --}}
             <td style='padding:12px'>
                 <a href="{{ route('admin.updatecategory',$product->id) }}" style='color:green'>Update</a>
-                <a href="{{ route('admin.deletecategory', $product->id) }}" class='btn btn-danger' onclick="return confirm('Are you sure')">Delete</a>
+                <a href="{{ route('admin.deleteproduct', $product->id) }}" class='btn btn-danger' onclick="return confirm('Are you sure')">Delete</a>
             </td>
         </tr>
     @endforeach
