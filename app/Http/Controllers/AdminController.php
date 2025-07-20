@@ -12,10 +12,17 @@ class AdminController extends Controller
     {
         return view('admin.addcategory');
     }
+    
     public function postAddCategory(Request $request){
         $category = new Category();
         $category = $request->category;
         $category->save();
         return redirect()->back()->with('caetegory_message', 'Category added successfully');
     }
+    
+    public function viewCategory(){
+        $categories = Category::all();
+        return view('admin.viewcategory',compact('categories'));
+    }
+    
 }
