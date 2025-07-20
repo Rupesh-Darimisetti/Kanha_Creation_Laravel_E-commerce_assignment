@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('index');
@@ -16,4 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('admin')->group(function () {
+    Route::get('/test_admin', [AdminController::class, 'test_admin'])->name('admin.test_admin');
+});
 require __DIR__.'/auth.php';
